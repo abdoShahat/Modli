@@ -76,7 +76,7 @@
           </thead>
           <tbody>
             <tr
-              ng-repeat="task in tasks"
+              ng-repeat="task in tasks track by $index"
               class="{{ task.status ? 'table-success' : 'table-light' }}"
             >
               <td>{{ $index + 1 }}</td>
