@@ -1,18 +1,20 @@
 var app = angular.module("myApp", []);
 app.controller("myController", function($scope) {
   $scope.tasks = [];
-  // $scope.saved = localStorage.getItem("tasks");
-  // $scope.tasks =
-  //   localStorage.getItem("tasks") !== null
-  //     ? JSON.parse($scope.saved)
-  //     : [
-  //         { task_name: "Learn AngularJS", status: false },
-  //         { task_name: "Build an Angular app", status: false }
-  //       ];
-  // localStorage.setItem("tasks", JSON.stringify($scope.tasks));
+  //بقخو اثقث
+  $scope.saved = localStorage.getItem("tasks");
+  $scope.tasks =
+    localStorage.getItem("tasks") !== null
+      ? JSON.parse($scope.saved)
+      : [
+          { task_name: "Learn AngularJS", status: false },
+          { task_name: "Build an Angular app", status: false }
+        ];
+  localStorage.setItem("tasks", JSON.stringify($scope.tasks));
+  // فخ اثقث
   $scope.saveTask = function() {
     $scope.tasks.push({ task_name: $scope.yourTask, status: false });
-    //   localStorage.setItem("tasks", JSON.stringify($scope.tasks));
+      localStorage.setItem("tasks", JSON.stringify($scope.tasks));
   };
   $scope.getTask = function() {
     var oldTasks = $scope.tasks;
